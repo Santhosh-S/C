@@ -1,16 +1,14 @@
-import { CPage } from './app.po';
+import { CProjectPage } from './app.po';
 
-describe('c App', () => {
-  let page: CPage;
+describe('c-project App', () => {
+  let page: CProjectPage;
 
   beforeEach(() => {
-    page = new CPage();
+    page = new CProjectPage();
   });
 
-  it('should display welcome message', done => {
+  it('should display welcome message', () => {
     page.navigateTo();
-    page.getParagraphText()
-      .then(msg => expect(msg).toEqual('Welcome to app!!'))
-      .then(done, done.fail);
+    expect(page.getParagraphText()).toEqual('Welcome to app!!');
   });
 });
